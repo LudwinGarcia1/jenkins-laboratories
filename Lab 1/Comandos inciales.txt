@@ -1,0 +1,11 @@
+# Crea explícitamente un volumen administrado de Docker llamado jenkins_home
+docker volume create jenkins_home
+
+# Crea y ejecuta en segundo plano un contenedor de Jenkins llamado jenkins que se ejecuta localmente en el puerto 8081.
+docker run -d --name jenkins --restart unless-stopped -p 127.0.0.1:8081:8080 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk21
+
+# Jenkins
+http://127.0.0.1:8081
+
+# Ejecuta un comando dentro del contenedor activo para leer y mostrar la contraseña inicial de administrador
+docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword

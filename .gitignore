@@ -1,0 +1,22 @@
+# Jenkins local home and secrets
+secrets/
+*.key
+*.pem
+initialAdminPassword
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+browser_context/
+
+# Temporary data
+*.tmp
+*.log
