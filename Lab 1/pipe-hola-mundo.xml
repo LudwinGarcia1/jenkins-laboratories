@@ -1,0 +1,30 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description>Practica 11: Jenkins - Laboratorio 1 - UTVT | Alumno: Ludwin Garcia Gaytan (Matricula: 222310777 - IDGS-81)</description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>echo "=========================================================="
+echo "  UNIVERSIDAD TECNOLOGICA DEL VALLE DE TOLUCA"
+echo "  Materia: Evaluacion y Mejora para el Desarrollo de Software"
+echo "  Practica 11: Jenkins - Laboratorio 1"
+echo "  Alumno: Ludwin Garcia Gaytan | Matricula: 222310777"
+echo "  Grupo: IDGS-81 | Profesor: Jorge Almeida Montiel"
+echo "=========================================================="
+echo "!Hola mundo!"
+</command>
+      <configuredLocalRules/>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>

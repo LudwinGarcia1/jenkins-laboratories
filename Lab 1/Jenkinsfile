@@ -1,0 +1,57 @@
+pipeline {
+    agent any
+
+    environment {
+        ALUMNO = 'Ludwin Garcia Gaytan'
+        MATRICULA = '222310777'
+        GRUPO = 'IDGS-81'
+        INSTITUCION = 'Universidad Tecnologica del Valle de Toluca'
+        PRACTICA = '11. Jenkins - Laboratorio 1'
+    }
+
+    stages {
+        stage('Informacion Institucional') {
+            steps {
+                echo '=========================================================='
+                echo "  ${env.INSTITUCION}"
+                echo '  Materia: Evaluacion y Mejora para el Desarrollo de Software'
+                echo "  Practica: ${env.PRACTICA}"
+                echo "  Alumno: ${env.ALUMNO} | Matricula: ${env.MATRICULA}"
+                echo "  Grupo: ${env.GRUPO} | Profesor: Jorge Almeida Montiel"
+                echo '=========================================================='
+            }
+        }
+
+        stage('Verificacion de Entorno') {
+            steps {
+                sh '''
+                    echo "Fecha y hora de ejecucion: $(date)"
+                    echo "Host de ejecucion: $(hostname)"
+                    echo "Version de Java en agente:"
+                    java -version
+                '''
+            }
+        }
+
+        stage('Ejecucion Hola Mundo') {
+            steps {
+                sh '''
+                    echo "¡Hola mundo desde Jenkins Pipeline!"
+                    echo "Contenedor: jenkins/jenkins:lts-jdk21"
+                    echo "Puerto local: 8081"
+                '''
+            }
+        }
+    }
+
+    post {
+        success {
+            echo '=========================================================='
+            echo '  ESTADO: SUCCESS - Construccion finalizada con exito'
+            echo '=========================================================='
+        }
+        failure {
+            echo 'ESTADO: FAILURE - Ocurrio un error en la ejecucion'
+        }
+    }
+}
